@@ -1,4 +1,3 @@
-/* global chrome */
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request !== 'getDSID') return false;
   var cUrl = 'https://ssl.binghamton.edu/';

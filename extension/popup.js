@@ -1,19 +1,20 @@
-document.querySelector('.message').textContent = chrome.i18n.getMessage('important_message');
+document.querySelector('.cookie').textContent = '<p>If you are reading this, something went horribly wrong.<p>';
 
 chrome.runtime.sendMessage('getDSID', (res) => {
-  const $content = document.querySelector('#content');
-  let $result = null;
-  if (!res || res.length === 0) {
-    $result = document.createElement('span');
-    $result.textContent = chrome.i18n.getMessage('no_cookies'); ;
+  if (!res ) {
+    $result = document.createElement('p');
+    $result.textContent = 'Your cookie does not exist.  Did you log in to the VPN?';
   } else {
-    $result = document.createElement('a');
-    $result.setAttribute('download', `ssl.binghamton.edu.DSID`);
-    $result.setAttribute('href', URL.createObjectURL(
+    $link = document.createElement('a');
+    $link.setAttribute('download', `ssl.binghamton.edu.DSID`);
+    $link.setAttribute('href', URL.createObjectURL(
       new Blob([JSON.stringify(res.value, null, 2).replace(/"/g,"")], { type: 'text/plain' }))
     );
-    $result.textContent = chrome.i18n.getMessage('download_json');
+    $link.textContent = 'Click to save DSID';
+    $result = document.createElement('p');
+    $result.textContent=('DSID cookie for ssl.binghamton.edu found.  ');
+    $result.appendChild($link);
   }
-  $content.removeChild(document.querySelector('.loading'));
-  $content.appendChild($result);
+  document.querySelector('.cookie').textContent='';
+  document.querySelector('.cookie').appendChild($result);
 });
