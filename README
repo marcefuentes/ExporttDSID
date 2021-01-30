@@ -1,0 +1,3 @@
+A Chrome extension that saves the DSID cookie to a file to be used by VPN software (e.g. openconnect) to conntect to a VPN requiring two-factor authentication.
+
+The code is easlily editable to chane the domaain and cookie name.

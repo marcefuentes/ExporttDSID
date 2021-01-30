@@ -1,0 +1,20 @@
+{
+  "ext_name": {
+    "message": "Export DSID for ssl.binghamton.edu"
+  },
+  "ext_desc": {
+    "message": "Export DSID cookie to be used by VPN software."
+  },
+  "important_message": {
+    "message": "If the link appears below your cookie exists"
+  },
+  "download_json": {
+    "message": "Export cookie to text file"
+  },
+  "no_cookies": {
+    "message": "Cookie not found"
+  },
+  "error_message": {
+    "message": "An error occurred"
+  }
+}
