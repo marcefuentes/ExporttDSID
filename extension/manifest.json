@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
-  "name": "BU VPM DSID Extractor",
-  "description": "Extract ssl.binghamton.edu DSID cookie to file",
+  "name": "UDC VPM DSID Extractor",
+  "description": "Extract vpn.udc.es DSID cookie to file",
   "version": "0.1.0",
   "icons": {
     "128": "icon/icon_128.png"
